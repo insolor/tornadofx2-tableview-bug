@@ -1,0 +1,31 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "1.4.32"
+    id 'application'
+}
+group = 'com.test'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+application {
+    mainClassName = "com.example.MainKt"
+}
+
+dependencies {
+    implementation "no.tornado:tornadofx:2.0.0-SNAPSHOT"
+//    implementation "no.tornado:tornadofx:1.7.20"
+
+    // testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "11"
+}
